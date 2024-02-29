@@ -1,1 +1,1 @@
-# oop_exercises
+Just some Java Exercises
