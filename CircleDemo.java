@@ -2,17 +2,35 @@ import java.util.Scanner;
 
 public class CircleDemo {
     public static void main(String[] args) {
+        // Using the default constructor
+        Circle defaultCircle = new Circle();
+        System.out.println(defaultCircle); // Implicitly calls toString()
 
-        System.out.println("Enter radius: ");
+        // Create Circle with user input
         Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter radius: ");
         double radius = scanner.nextDouble();
+        try {
+            Circle userCircle = new Circle(radius);
+            System.out.println(userCircle); // Implicitly calls toString()
 
-        Circle circle = new Circle(radius);
+            // Compare circles
+            if (defaultCircle.equals(userCircle)) {
+                System.out.println("The circles are equal.");
+            } else {
+                System.out.println("The circles are not equal.");
+            }
+        } catch (IllegalArgumentException e) {
+            System.err.println(e.getMessage());
+        } finally {
+            scanner.close();
+        }
 
-        System.out.printf("Radius: %.3f%n", circle.getRadius());
-        System.out.printf("Perimeter: %.3f%n", circle.perimeter());
-        System.out.printf("Area: %.3f%n", circle.area());
-
-        scanner.close();
+        // Attempt to create an invalid Circle object
+        try {
+            Circle invalidCircle = new Circle(-1);
+        } catch (IllegalArgumentException e) {
+            System.err.println("Failed to create a circle: " + e.getMessage());
+        }
     }
 }
