@@ -1,1 +1,1 @@
-Just some Java Exercises
+Collection of all java exercises
