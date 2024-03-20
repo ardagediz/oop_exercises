@@ -95,4 +95,3 @@ public class Clock implements Runnable {
   }
 }
 
-// Hello hello hello hello hello hello hello
