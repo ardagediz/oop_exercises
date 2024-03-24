@@ -16,7 +16,14 @@ public class idk {
         int digitCount = 0;
 
         for (int i = 0; password.length() > i; i++) {
-            if (Character.hasDigit())
+            if (Character.isDigit(password.charAt(i))) {
+                digitCount++;
+            }
+            if (digitCount >= 2) {
+                return true;
+            }
         }
+        return false;
     }
+    
 }
