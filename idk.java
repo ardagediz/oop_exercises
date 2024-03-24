@@ -13,6 +13,10 @@ public class idk {
     }
 
     public static boolean hasDigits() {
-        
+        int digitCount = 0;
+
+        for (int i = 0; password.length() > i; i++) {
+            if (Character.hasDigit())
+        }
     }
 }
