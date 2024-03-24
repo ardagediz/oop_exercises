@@ -6,6 +6,13 @@ public class idk {
         } 
 
         String password = args[0];
+
+        if (enoughCharacters(password) && hasSpecialChar(password) && hasDigits(password)) {
+            System.out.println("Password is valid");
+        }
+        else {
+            System.out.println("Password is invalid");
+        }
     }
 
     public static boolean enoughCharacters() {
@@ -26,4 +33,17 @@ public class idk {
         return false;
     }
     
+    public static boolean hasSpecialChar() {
+        int specialCharCount = 0;
+
+        for (int j = 0; password.length() > j; j++) {
+            if (!Character.isDigit(password.charAt(i)) && !Character.isLetter(password.charAt(i))) {
+                specialCharCount++;
+            }
+            if (specialCharCount >= 2) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
