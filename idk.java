@@ -9,6 +9,10 @@ public class idk {
     }
 
     public static boolean enoughCharacters() {
+        return password.length() >= 12;
+    }
+
+    public static boolean hasDigits() {
         
     }
 }
