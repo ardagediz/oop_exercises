@@ -15,11 +15,11 @@ public class idk {
         }
     }
 
-    public static boolean enoughCharacters() {
+    public static boolean enoughCharacters(String password) {
         return password.length() >= 12;
     }
 
-    public static boolean hasDigits() {
+    public static boolean hasDigits(String password) {
         int digitCount = 0;
 
         for (int i = 0; password.length() > i; i++) {
@@ -33,11 +33,11 @@ public class idk {
         return false;
     }
     
-    public static boolean hasSpecialChar() {
+    public static boolean hasSpecialChar(String password) {
         int specialCharCount = 0;
 
         for (int j = 0; password.length() > j; j++) {
-            if (!Character.isDigit(password.charAt(i)) && !Character.isLetter(password.charAt(i))) {
+            if (!Character.isDigit(password.charAt(j)) && !Character.isLetter(password.charAt(j))) {
                 specialCharCount++;
             }
             if (specialCharCount >= 2) {
